@@ -1,6 +1,7 @@
 package recursos;
 
 import jakarta.ws.rs.Path;
+import jakarta.transaction.Transactional;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 
@@ -15,6 +16,7 @@ public class ProdutoRecurso {
     }
 
     @POST
+    @Transactional
     public void salvar(Produto produto) {
         produto.persist();
     }
